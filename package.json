@@ -1,6 +1,6 @@
 {
-  "name": "lets-twitt-ts",
-  "displayName": "Lets twitt ts",
+  "name": "chatgpt-linkedin-ui-extension",
+  "displayName": "Danny ChatGPT extension",
   "version": "0.0.1",
   "description": "A basic Plasmo extension.",
   "author": "Kader Gomez",
@@ -10,6 +10,7 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "daisyui": "^2.51.5",
     "plasmo": "0.67.4",
     "react": "18.2.0",
@@ -24,7 +25,7 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "prettier": "2.8.3",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.3.1",
     "typescript": "4.9.4"
   },
   "manifest": {
