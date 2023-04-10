@@ -1,12 +1,12 @@
 import cssText from "data-text:~src/style.css"
 import type { PlasmoCSConfig } from "plasmo"
 
-import { CountButton } from "~src/features/count-button"
+import SidebarToggle from "~src/features/sidebar-overlay"
 
 import "~src/base.css"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.plasmo.com/*"]
+  matches: ["<all_urls>"]
 }
 
 export const getStyle = () => {
@@ -17,8 +17,8 @@ export const getStyle = () => {
 
 const PlasmoOverlay = () => {
   return (
-    <div className="z-50 flex fixed top-32 right-8">
-      <CountButton />
+    <div className="z-50 flex fixed bottom-10 right-0">
+      <SidebarToggle />
     </div>
   )
 }
