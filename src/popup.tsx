@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-import { CountButton } from "./features/count-button"
-
 import "react"
 import "./base.css"
 import "./style.css"
@@ -11,15 +9,15 @@ function IndexPopup() {
 
   return (
     <>
-      <article className="prose card card-compact bg-base-100 shadow-xl m-6 p-2 w-96">
-        <h1>Garlic bread with cheese: What the science tells us</h1>
-        <p>
-          For years parents have espoused the health benefits of eating garlic
-          bread with cheese to their children, with the food earning such an
-          iconic status in our culture that kids will often dress up as warm,
-          cheesy loaf for Halloween.
-        </p>
-      </article>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">Card title!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

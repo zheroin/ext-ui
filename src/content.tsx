@@ -1,9 +1,9 @@
-import cssText from "data-text:~src/style.css"
+import "../src/base.css"
+
+import cssText from "data-text:../src/style.css"
 import type { PlasmoCSConfig } from "plasmo"
 
-import SidebarToggle from "~src/features/sidebar-overlay"
-
-import "~src/base.css"
+import App from "~src/App"
 
 export const config: PlasmoCSConfig = {
   matches: ["<all_urls>"]
@@ -18,7 +18,7 @@ export const getStyle = () => {
 const PlasmoOverlay = () => {
   return (
     <div className="z-50 flex fixed bottom-10 right-0">
-      <SidebarToggle />
+      <App />
     </div>
   )
 }
