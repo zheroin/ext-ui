@@ -14,16 +14,8 @@ const Overlay = () => {
           <div className="navbar bg-base-100 p-0 h-6 relative rounded-lg drop-shadow-md flex">
             <div className="flex-auto">
               <ul className="menu p-0 menu-horizontal bg-base-100 space-x-2 rounded-box">
-                <li>
-                  <a>
-                    <List />
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <ThemeComponent />
-                  </a>
-                </li>
+                <List />
+                <ThemeComponent />
                 <li>
                   <a>
                     <svg

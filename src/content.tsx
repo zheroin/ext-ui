@@ -2,6 +2,7 @@ import "../src/base.css"
 
 import cssText from "data-text:../src/style.css"
 import type { PlasmoCSConfig } from "plasmo"
+import { BrowserRouter } from "react-router-dom"
 
 import App from "~src/App"
 
@@ -17,9 +18,9 @@ export const getStyle = () => {
 
 const PlasmoOverlay = () => {
   return (
-    <div className="z-50 flex fixed bottom-10 right-0">
+    <BrowserRouter>
       <App />
-    </div>
+    </BrowserRouter>
   )
 }
 

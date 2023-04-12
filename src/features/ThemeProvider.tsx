@@ -5,19 +5,13 @@ import { getThemeFromClosestAncestor } from "../theme/utils"
 import type { DataTheme, IComponentBaseProps } from "../types"
 import { ThemeContext } from "./ThemeContext"
 
-export type ThemeProps = Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  "onChange"
-> &
+export type ThemeProps = Omit<React.HTMLAttributes<HTMLDivElement>, ""> &
   IComponentBaseProps & {
-    onChange?: (theme: DataTheme) => void
+    onClick?: (theme: DataTheme) => void
   }
 
 const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
-  (
-    { children, dataTheme, onChange, className, ...props },
-    ref
-  ): JSX.Element => {
+  ({ children, dataTheme, onClick, className, ...props }, ref): JSX.Element => {
     // Either use provided ref or create a new ref
     const themeRef = useRef<HTMLDivElement>(
       (ref as MutableRefObject<HTMLDivElement>)?.current
@@ -32,15 +26,16 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
 
     const handleThemeChange = (theme: DataTheme) => {
       // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage
-      onChange && onChange(theme)
+      onClick && onClick(theme)
       // Update state/context
+
       setTheme(theme)
     }
 
     // Properly handle changes to theme prop on Theme component
     useEffect(() => {
       if (dataTheme !== theme) {
-        dataTheme && handleThemeChange(dataTheme)
+        dataTheme && handleThemeChange(theme)
       }
     }, [dataTheme])
 
