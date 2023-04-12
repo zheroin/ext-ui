@@ -3,7 +3,7 @@ import React from "react"
 import ThemeComponent from "~src/components/themeSelect"
 import { SidebarContext } from "~src/features/SidebarContext"
 
-import List from "./bodylist"
+import List from "./pagelist"
 
 export const Close = () => {
   return (

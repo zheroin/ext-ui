@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 
-import type { DataTheme } from "../types"
 import { ThemeContext } from "./ThemeContext"
+import type { DataTheme } from "./Themetypes"
 
 export const useTheme = (value?: DataTheme) => {
   const { theme, setTheme } = useContext(ThemeContext)

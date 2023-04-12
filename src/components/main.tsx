@@ -1,22 +1,22 @@
 import React, { useState } from "react"
 
+import { PageContext } from "~src/features/PageContext"
+
 const Card = () => {
   const [data, setData] = useState()
   return (
-    <>
-      <div className="stats shadow-lg overflow-x-hidden artboard">
-        <div className="stat">
-          <div className="stat-title">Registers</div>
-          <div className="stat-value">4,200</div>
-          <div className="stat-desc">↗︎ 400 (22%)</div>
-        </div>
-        <div className="stat">
-          <div className="stat-title">New Users</div>
-          <div className="stat-value">100</div>
-          <div className="stat-desc">↗︎ 400 (22%)</div>
-        </div>
+    <div className="stats shadow-lg overflow-x-hidden artboard">
+      <div className="stat">
+        <div className="stat-title">Registers</div>
+        <div className="stat-value">4,200</div>
+        <div className="stat-desc">↗︎ 400 (22%)</div>
       </div>
-    </>
+      <div className="stat">
+        <div className="stat-title">New Users</div>
+        <div className="stat-value">100</div>
+        <div className="stat-desc">↗︎ 400 (22%)</div>
+      </div>
+    </div>
   )
 }
 const ClientTable = () => {
@@ -82,11 +82,18 @@ const Skelton = () => {
     </div>
   )
 }
-const Main = () => {
+const Page = () => {
   return (
-    <>
-      <ClientTable />
-    </>
+    <PageContext.Consumer>
+      {({ page, setPage }) => {
+        switch (page) {
+          case "clients":
+            return <ClientTable />
+          default:
+            break
+        }
+      }}
+    </PageContext.Consumer>
   )
 }
-export default Main
+export default Page

@@ -2,8 +2,8 @@ import React, { MutableRefObject, useEffect, useRef, useState } from "react"
 
 import { defaultTheme } from "../constants"
 import { getThemeFromClosestAncestor } from "../theme/utils"
-import type { DataTheme, IComponentBaseProps } from "../types"
 import { ThemeContext } from "./ThemeContext"
+import type { DataTheme, IComponentBaseProps } from "./Themetypes"
 
 export type ThemeProps = Omit<React.HTMLAttributes<HTMLDivElement>, ""> &
   IComponentBaseProps & {
