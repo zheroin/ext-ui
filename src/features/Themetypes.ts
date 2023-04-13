@@ -10,7 +10,6 @@ import type {
 import type { DEFAULT_THEMES } from "../theme/defaultThemes"
 
 export type DataTheme = (typeof DEFAULT_THEMES)[number] | string
-
 export interface IComponentBaseProps {
   dataTheme?: DataTheme
 }

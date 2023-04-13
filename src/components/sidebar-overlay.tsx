@@ -9,20 +9,21 @@ import "../../src/base.css"
 import "../../src/style.css"
 
 import { PageContext } from "~src/features/PageContext"
+import PageProvider from "~src/features/PageProvider"
 import { SidebarContext } from "~src/features/SidebarContext"
 
 export const Sidebar = () => {
   const [opened, setOpened] = useState(false)
   const [page, setPage] = useState("clients")
   const value = { opened, setOpened }
-  const viewpage = { page, setPage }
+  //   const viewpage = { page, setPage }
   return (
     <SidebarContext.Provider value={value}>
       {value.opened ? (
         <ThemeProvider>
-          <PageContext.Provider value={viewpage}>
+          <PageProvider>
             <Layout />
-          </PageContext.Provider>
+          </PageProvider>
         </ThemeProvider>
       ) : (
         <Toggle />

@@ -5,7 +5,7 @@ import { getThemeFromClosestAncestor } from "../theme/utils"
 import { ThemeContext } from "./ThemeContext"
 import type { DataTheme, IComponentBaseProps } from "./Themetypes"
 
-export type ThemeProps = Omit<React.HTMLAttributes<HTMLDivElement>, ""> &
+export type ThemeProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onClick"> &
   IComponentBaseProps & {
     onClick?: (theme: DataTheme) => void
   }
@@ -23,6 +23,8 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
     const [theme, setTheme] = useState<DataTheme>(
       dataTheme || closestAncestorTheme || defaultTheme
     )
+    dataTheme = window.localStorage.getItem("extension-sidebar-theme")
+    if (dataTheme !== theme) setTheme(dataTheme)
 
     const handleThemeChange = (theme: DataTheme) => {
       // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage

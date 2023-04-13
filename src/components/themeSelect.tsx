@@ -34,7 +34,7 @@ function ThemeComponent() {
       </a>
       <div
         tabIndex={0}
-        className="dropdown-content bg-base-200 p-2 text-base-content w-52 shadow-2xl">
+        className="dropdown-content bg-base-100 p-2 text-base-content w-52 shadow-2xl">
         <div className="grid grid-cols-1 gap-3  items-start overflow-auto w-full max-h-96">
           {DEFAULT_THEMES.map((t, i) => (
             <ThemeItem
