@@ -1,24 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 
-import { PageContext } from "~src/features/PageContext"
+import { usePage } from "~src/features/usePage"
 
 import Top from "./Top"
 import Clients from "./clients"
 
 const Page = () => {
+  const { page } = usePage()
   return (
     <>
       <Top />
-      <PageContext.Consumer>
-        {({ page, setPage }) => {
-          switch (page) {
-            case "clients":
-              return <Clients />
-            default:
-              break
-          }
-        }}
-      </PageContext.Consumer>
+      {(() => {
+        switch (page) {
+          case "clients":
+            return <Clients />
+          default:
+            return null
+        }
+      })()}
     </>
   )
 }

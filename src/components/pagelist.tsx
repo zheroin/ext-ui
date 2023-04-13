@@ -6,7 +6,7 @@ import { PAGE_PICKER_LIST } from "~src/theme/consts"
 import PageItem from "./pageitem"
 
 function PageComponent() {
-  const { page, setPage } = usePage()
+  const { setPage } = usePage()
   return (
     <li title="Change Content" className="dropdown dropdown-start relative">
       <a tabIndex={0} className="btn gap-1 normal-case btn-ghost">
@@ -32,8 +32,6 @@ function PageComponent() {
                 namePage={pg.name}
                 icon={pg.icon}
                 onClick={() => {
-                  console.log(pg.key)
-
                   window.localStorage.setItem("active-page", pg.key)
                   setPage(pg.key)
                 }}
