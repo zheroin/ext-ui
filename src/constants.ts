@@ -15,5 +15,6 @@ export const componentColors = [
 ] as const
 export const bgColors = ["base-100", "base-200", "base-300", "neutral"] as const
 
-export const defaultTheme = "light"
-export const defaultPage = "ecommerce"
+export const defaultTheme = "dark"
+export const defaultPage = "setting"
+export const defaultToggle = true

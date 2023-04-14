@@ -14,10 +14,11 @@ const PageItem = ({
   icon,
   ...props
 }: PageItemProps) => {
+  className = "box-decoration-clone hover:box-decoration-slice"
   return (
     <div {...props} className={className} data-page={dataPage}>
       <div data-page={dataPage}>
-        <div className="flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+        <div className="flex items-center p-2 z-50 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
           <svg
             fill="none"
             stroke="currentColor"

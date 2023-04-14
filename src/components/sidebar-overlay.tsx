@@ -8,15 +8,14 @@ import Toggle from "./toggle"
 import "../../src/base.css"
 import "../../src/style.css"
 
-import { PageContext } from "~src/features/PageContext"
+import { defaultToggle } from "~src/constants"
 import PageProvider from "~src/features/PageProvider"
 import { SidebarContext } from "~src/features/SidebarContext"
 
 export const Sidebar = () => {
-  const [opened, setOpened] = useState(false)
-  const [page, setPage] = useState("clients")
+  const [opened, setOpened] = useState(defaultToggle)
   const value = { opened, setOpened }
-  //   const viewpage = { page, setPage }
+
   return (
     <SidebarContext.Provider value={value}>
       {value.opened ? (

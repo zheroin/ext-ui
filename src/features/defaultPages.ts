@@ -3,5 +3,6 @@ export const DEFAULT_PAGES = [
   "inbox",
   "send",
   "ecommerce",
-  "chat"
+  "chat",
+  "setting"
 ] as const

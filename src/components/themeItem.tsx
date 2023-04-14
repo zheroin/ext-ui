@@ -17,7 +17,7 @@ const ThemeItem = ({
 }: ThemeItemProps) => {
   const classes = twMerge(
     className,
-    "border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border"
+    "border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border form-control"
   )
   return (
     <div {...props} data-theme={dataTheme} className={classes}>

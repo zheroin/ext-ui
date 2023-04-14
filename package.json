@@ -10,6 +10,10 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.5.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@material-tailwind/react": "^1.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "clsx": "^1.2.1",
     "daisyui": "^2.51.5",

@@ -8,7 +8,7 @@ import PageItem from "./pageitem"
 function PageComponent() {
   const { setPage } = usePage()
   return (
-    <li title="Change Content" className="dropdown dropdown-start relative">
+    <li title="Change Content" className="dropdown dropdown-start relative ">
       <a tabIndex={0} className="btn gap-1 normal-case btn-ghost">
         <svg
           className="w-5 h-5"
@@ -21,8 +21,8 @@ function PageComponent() {
 
       <div
         tabIndex={0}
-        className="dropdown-content bg-base-100 p-2 text-base-content w-52 shadow-2xl">
-        <div className="grid grid-cols-1 gap-3 p-3 items-start">
+        className="dropdown-content bg-base-100 p-2 text-base-content w-40 rounded-none shadow-2xl">
+        <div className="grid grid-cols-1 gap-3 p-3 items-start ">
           {PAGE_PICKER_LIST.map((pg, index) => {
             return (
               <PageItem

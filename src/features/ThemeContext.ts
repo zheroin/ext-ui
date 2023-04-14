@@ -1,5 +1,7 @@
 import React from "react"
 
+import { defaultTheme } from "~src/constants"
+
 import type { DataTheme } from "./Themetypes"
 
 export interface IThemeContext {
@@ -8,6 +10,6 @@ export interface IThemeContext {
 }
 
 export const ThemeContext = React.createContext<IThemeContext>({
-  theme: "dark",
+  theme: defaultTheme,
   setTheme: () => {}
 })

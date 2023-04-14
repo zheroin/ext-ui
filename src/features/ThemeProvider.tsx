@@ -20,10 +20,12 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
     const closestAncestorTheme = getThemeFromClosestAncestor(themeRef)
 
     // If no theme is provided, use the closest ancestor theme, if no ancestor theme, fallback to default theme (defined in constants)
+    dataTheme = window.localStorage.getItem("extension-sidebar-theme")
     const [theme, setTheme] = useState<DataTheme>(
       dataTheme || closestAncestorTheme || defaultTheme
     )
-    dataTheme = window.localStorage.getItem("extension-sidebar-theme")
+    console.log(`theme: ${dataTheme}`)
+
     if (dataTheme !== theme) setTheme(dataTheme)
 
     const handleThemeChange = (theme: DataTheme) => {

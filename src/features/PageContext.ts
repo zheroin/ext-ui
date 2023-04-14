@@ -1,5 +1,7 @@
 import React from "react"
 
+import { defaultPage } from "~src/constants"
+
 import type { DataPage } from "./PageTypes"
 
 export interface IPageContext {
@@ -8,6 +10,6 @@ export interface IPageContext {
 }
 
 export const PageContext = React.createContext<IPageContext>({
-  page: "ecommerce",
+  page: defaultPage,
   setPage: () => {}
 })

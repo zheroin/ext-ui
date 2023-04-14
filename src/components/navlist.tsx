@@ -2,6 +2,7 @@ import React from "react"
 
 import ThemeComponent from "~src/components/themeSelect"
 import { SidebarContext } from "~src/features/SidebarContext"
+import { usePage } from "~src/features/usePage"
 
 import List from "./pagelist"
 
@@ -54,9 +55,12 @@ export const Home = () => {
   )
 }
 export const Setting = () => {
+  const { setPage } = usePage()
   return (
     <li title="Setting">
-      <a className="btn gap-1 normal-case btn-ghost">
+      <a
+        className="btn gap-1 normal-case btn-ghost"
+        onClick={() => setPage("setting")}>
         <svg
           fill="none"
           className="h-5 w-5"
