@@ -4,7 +4,7 @@ import { usePage } from "~src/features/usePage"
 import { useUser } from "~src/features/useUser"
 
 const Setting = () => {
-  const { page, setPage } = usePage()
+  const { setPage } = usePage()
   const { email, setEmail, password, setPassword, apikey, setAPIkey } =
     useUser()
   const [vemail, setVEmail] = useState(email)
@@ -19,6 +19,9 @@ const Setting = () => {
   }
   const handleSave = () => {
     console.log("Saving...")
+    window.localStorage.setItem("user-email", vemail)
+    window.localStorage.setItem("user-password", vpassword)
+    window.localStorage.setItem("user-apikey", vapikey)
     setEmail(vemail)
     setPassword(vpassword)
     setAPIkey(vapikey)
@@ -30,6 +33,7 @@ const Setting = () => {
     setAPIkey(vapikey)
     setPage("client")
   }
+
   return (
     <>
       <div className=" mx-auto py-8">
@@ -40,8 +44,9 @@ const Setting = () => {
               <span className="w-16">Email</span>
               <input
                 type="text"
-                defaultValue={email}
+                name="email"
                 value={vemail}
+                onChange={(e) => setVEmail(e.target.value)}
                 placeholder="    info@site.com"
                 className="h-8 input-bordered"
               />
@@ -52,8 +57,9 @@ const Setting = () => {
               <span className="w-16">Password</span>
               <input
                 type="password"
-                defaultValue={password}
+                name="password"
                 value={vpassword}
+                onChange={(e) => setVPassword(e.target.value)}
                 placeholder="    ************"
                 className="h-8 input-bordered"
               />
@@ -64,8 +70,9 @@ const Setting = () => {
               <span className="w-16">API key</span>
               <input
                 type="text"
-                defaultValue={apikey}
+                name="apikey"
                 value={vapikey}
+                onChange={(e) => setVAPIkey(e.target.value)}
                 placeholder="    sk-xxxxxxxxxxxxxxxxx"
                 className="h-8 input-bordered"
               />
@@ -75,6 +82,7 @@ const Setting = () => {
             <div className="btn btn-outline ring-2 w-12 btn-danger">
               <input
                 type="button"
+                name="reset"
                 value="Reset"
                 className="w-full h-full border-none  bg-transparent text-primary"
                 onClick={handleReset}
@@ -83,6 +91,7 @@ const Setting = () => {
             <div className="btn btn-outline ring-2 w-12 btn-primary">
               <input
                 type="button"
+                name="save"
                 value="Save"
                 className="w-full h-full border-none  bg-transparent text-primary"
                 onClick={handleSave}
@@ -91,6 +100,7 @@ const Setting = () => {
             <div className="btn btn-outline ring-2 w-12 btn-success">
               <input
                 type="button"
+                name="apply"
                 value="Apply"
                 className="w-full h-full border-none  bg-transparent text-primary"
                 onClick={handleApply}
