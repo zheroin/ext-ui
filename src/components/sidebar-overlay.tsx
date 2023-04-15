@@ -11,6 +11,7 @@ import "../../src/style.css"
 import { defaultToggle } from "~src/constants"
 import PageProvider from "~src/features/PageProvider"
 import { SidebarContext } from "~src/features/SidebarContext"
+import { UserProvider } from "~src/features/UserProvider"
 
 export const Sidebar = () => {
   const [opened, setOpened] = useState(defaultToggle)
@@ -20,9 +21,11 @@ export const Sidebar = () => {
     <SidebarContext.Provider value={value}>
       {value.opened ? (
         <ThemeProvider>
-          <PageProvider>
-            <Layout />
-          </PageProvider>
+          <UserProvider>
+            <PageProvider>
+              <Layout />
+            </PageProvider>
+          </UserProvider>
         </ThemeProvider>
       ) : (
         <Toggle />
