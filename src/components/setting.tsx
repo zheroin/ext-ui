@@ -11,14 +11,11 @@ const Setting = () => {
   const [vpassword, setVPassword] = useState(password)
   const [vapikey, setVAPIkey] = useState(apikey)
   const handleReset = () => {
-    console.log("Testing...")
-
     setVEmail("")
     setVPassword("")
     setVAPIkey("")
   }
   const handleSave = () => {
-    console.log("Saving...")
     window.localStorage.setItem("user-email", vemail)
     window.localStorage.setItem("user-password", vpassword)
     window.localStorage.setItem("user-apikey", vapikey)
@@ -27,7 +24,6 @@ const Setting = () => {
     setAPIkey(vapikey)
   }
   const handleApply = () => {
-    console.log("Applying...")
     setEmail(vemail)
     setPassword(vpassword)
     setAPIkey(vapikey)

@@ -17,4 +17,4 @@ export const bgColors = ["base-100", "base-200", "base-300", "neutral"] as const
 
 export const defaultTheme = "dark"
 export const defaultPage = "setting"
-export const defaultToggle = true
+export const defaultToggle = false

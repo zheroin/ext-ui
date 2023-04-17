@@ -16,7 +16,12 @@ import { UserProvider } from "~src/features/UserProvider"
 export const Sidebar = () => {
   const [opened, setOpened] = useState(defaultToggle)
   const value = { opened, setOpened }
-
+  chrome.runtime.onMessage.addListener(function (msg, sender) {
+    if (msg == "toggle") {
+      console.log("message received")
+      setOpened(!opened)
+    }
+  })
   return (
     <SidebarContext.Provider value={value}>
       {value.opened ? (

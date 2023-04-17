@@ -1,4 +1,4 @@
 import { getProfile } from "./utile"
 
-let url
+let url = window.location.href
 export const Profile = getProfile(url)
